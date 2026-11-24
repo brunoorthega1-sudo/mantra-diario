@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mantra del día</title>
+  <meta name="description" content="Un mantra budista distinto cada día, con su significado y una mala digital de 108 cuentas.">
+  <meta name="theme-color" content="#14110f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+  <!-- iOS / iPadOS -->
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mantra">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card" aria-live="polite">
+    <p class="date" id="date"></p>
+
+    <div class="mala" id="mala" role="button" tabindex="0" aria-label="Contar una repetición">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="track" cx="60" cy="60" r="54"/>
+        <circle class="progress" id="ring" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="mantra-wrap">
+        <h1 id="mantra"></h1>
+      </div>
+    </div>
+
+    <p class="roman" id="roman"></p>
+    <p class="meaning" id="meaning"></p>
+    <p class="tradition" id="tradition"></p>
+
+    <div class="counter"><span id="count">0</span> / 108 <button id="reset" title="Reiniciar cuenta">↺</button></div>
+
+    <nav class="controls">
+      <button id="prev" aria-label="Mantra anterior">‹</button>
+      <button id="today">Hoy</button>
+      <button id="next" aria-label="Mantra siguiente">›</button>
+      <button id="copy" aria-label="Copiar mantra">Copiar</button>
+    </nav>
+  </main>
+
+  <script src="mantras.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

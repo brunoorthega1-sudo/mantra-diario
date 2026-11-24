@@ -1,0 +1,57 @@
+:root {
+  --bg: #14110f;
+  --fg: #f1e8d8;
+  --muted: #a89c88;
+  --accent: #d9a441;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: radial-gradient(circle at 50% 30%, #231c16, var(--bg) 70%);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  display: grid;
+  place-items: center;
+}
+.card {
+  width: min(92vw, 420px);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.date { color: var(--muted); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 1rem; }
+
+.mala { position: relative; width: 100%; aspect-ratio: 1; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.mala svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.track { fill: none; stroke: #ffffff12; stroke-width: 1.5; }
+.progress {
+  fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round;
+  stroke-dasharray: 339.3; stroke-dashoffset: 339.3;
+  transition: stroke-dashoffset .35s ease;
+}
+.mantra-wrap { position: absolute; inset: 14%; display: grid; place-items: center; }
+h1 { font-weight: 400; font-size: clamp(1.25rem, 6vw, 1.9rem); line-height: 1.3; margin: 0; }
+h1.md { font-size: clamp(1rem, 4.6vw, 1.4rem); }
+h1.lg { font-size: clamp(.85rem, 3.7vw, 1.1rem); }
+.roman { margin: .8rem 0 0; color: var(--muted); font-size: .8rem; font-style: italic; }
+.roman:empty { display: none; }
+.mala:active h1 { transform: scale(.98); }
+h1 { transition: transform .15s; }
+
+.meaning { margin: 1rem 0 .3rem; font-style: italic; color: var(--fg); opacity: .9; }
+.tradition { margin: 0; color: var(--muted); font-size: .8rem; }
+
+.counter { margin-top: 1rem; color: var(--muted); font-size: .9rem; }
+.counter span { color: var(--accent); font-size: 1.1rem; }
+
+.controls { margin-top: 1rem; display: flex; gap: .5rem; justify-content: center; }
+button {
+  background: transparent; color: var(--fg); border: 1px solid #ffffff22;
+  border-radius: 999px; padding: .4rem .9rem; font: inherit; cursor: pointer;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+.counter button { padding: 0 .5rem; border: none; color: var(--muted); }
+
+/* Modo compacto para incrustar: index.html?compact=1 */
+body.compact .card { padding: .5rem; }
+body.compact .controls, body.compact .counter, body.compact .tradition { display: none; }
+body.compact .mala { max-width: 260px; margin: 0 auto; }
